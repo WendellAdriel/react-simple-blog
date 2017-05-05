@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { fetchPosts } from '../actions'
 import PostList from '../components/post-list'
+import ButtonLink from '../components/button-link'
 
 class PostsIndex extends Component {
   componentDidMount () {
@@ -11,7 +13,10 @@ class PostsIndex extends Component {
 
   render () {
     return (
-      <PostList posts={ this.props.posts } />
+      <div>
+        <ButtonLink url="/posts/new" />
+        <PostList posts={ this.props.posts } />
+      </div>
     )
   }
 }
